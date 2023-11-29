@@ -16,9 +16,11 @@
 
     @include('admin.partials.header')
 
-    <div class="main-wrapper d-flex container-view-dash">
+    <div class="main-wrapper d-flex">
         @include('admin.partials.sidebar')
-        @yield('content')
+        <div class=" overflow-auto h-100 w-100">
+            @yield('content')
+        </div>
     </div>
 
 </body>
