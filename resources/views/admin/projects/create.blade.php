@@ -16,7 +16,7 @@
         </div>
         <div class="mb-3">
             <label for="web_site" class="form-label">Url</label>
-            <input type="text" class="form-control" id="web_site" name="web_site">
+            <input type="url" class="form-control" id="web_site" name="web_site">
         </div>
         <div class="mb-3">
             <label for="technology" class="form-label">Tecnologia</label>
