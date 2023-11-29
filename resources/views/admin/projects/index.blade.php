@@ -9,6 +9,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
                 <th scope="col">Data creazione</th>
+                <th scope="col">Tipo</th>
                 <th scope="col">Azioni</th>
               </tr>
             </thead>
@@ -19,6 +20,7 @@
                   <th scope="row">{{ $project->id}}</th>
                   <td>{{ $project->name}}</td>
                   <td>{{ $project->date_creation}}</td>
+                  <td>{{ $project->type}}</td>
                   <td>
                     <a class="btn btn-success" href="{{ route('admin.projects.show', $project->id)}}"><i class="fa-solid fa-eye"></i></a>
                   </td>
