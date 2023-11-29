@@ -11,12 +11,12 @@
           <input type="text" class="form-control" id="name" name="name">
         </div>
         <div class="mb-3">
-          <label for="date" class="form-label">Data di creazione</label>
-          <input type="date" class="form-control" id="date" name="date">
+          <label for="date_creation" class="form-label">Data di creazione</label>
+          <input type="date" class="form-control" id="date_creation" name="date_creation">
         </div>
         <div class="mb-3">
-            <label for="url" class="form-label">URL</label>
-            <input type="text" class="form-control" id="url" name="url">
+            <label for="web_site" class="form-label">Url</label>
+            <input type="text" class="form-control" id="web_site" name="web_site">
         </div>
         <div class="mb-3">
             <label for="technology" class="form-label">Tecnologia</label>
