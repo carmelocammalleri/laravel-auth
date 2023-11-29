@@ -15,7 +15,8 @@
 <body>
 
     @include('admin.partials.header')
-    <div class="main-wrapper d-flex">
+
+    <div class="main-wrapper d-flex container-view-dash">
         @include('admin.partials.sidebar')
         @yield('content')
     </div>

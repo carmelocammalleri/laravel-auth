@@ -1,8 +1,8 @@
-@extends('layout.admin')
+@extends('layouts.admin')
 
 @section('content')
     <div class="container">
-        <p>qui abbiamo i tipi di lavori</p>
+        <h1>qui abbiamo i tipi di lavori</h1>
         <table class="table">
             <thead>
               <tr>

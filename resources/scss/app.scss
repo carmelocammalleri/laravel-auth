@@ -3,6 +3,10 @@
 
 .main-wrapper{
     height: calc(100vh - 50px);
+    overflow: auto;
+    .container-view-dash{
+        height: 100%;
+    }
 }
 
 aside{
@@ -19,4 +23,8 @@ aside{
             }
         }
     }
+}
+
+header{
+    height: 50px;
 }
