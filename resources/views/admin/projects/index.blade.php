@@ -26,9 +26,9 @@
                   <td>{{ $project->type}}</td>
                   <td>
                     <a class="btn btn-success" href="{{ route('admin.projects.show', $project->id)}}"><i class="fa-solid fa-eye"></i></a>
-                  </td>
-                  <td>
-                    <form action="{{ route('admin.projects.destroy', $project->id) }}"
+                    <a class="btn btn-warning" href=""><i class="fa-regular fa-pen-to-square"></i></a>
+                    <form class="d-inline-block"
+                        action="{{ route('admin.projects.destroy', $project->id) }}"
                        method="POST"
                        onsubmit="return confirm ('Sei sicuro di voler eliminare questo elemento?')">
 
@@ -37,6 +37,7 @@
                        <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
                     </form>
                   </td>
+
                 </tr>
                 @endforeach
             </tbody>
