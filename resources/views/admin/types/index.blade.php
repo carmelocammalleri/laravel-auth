@@ -32,7 +32,7 @@
                         @csrf
                         @method('PUT')
 
-                        <input for="name" type="text" value="{{$type->name}}">
+                        <input name="name" id="name" type="text" value="{{$type->name}}" class="no-border">
                     </form>
                   </td>
 

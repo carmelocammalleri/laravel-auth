@@ -41,7 +41,9 @@
                   <td>
                     <a class="btn btn-success" href="{{ route('admin.tecnologies.show', $tecnology->id)}}"><i class="fa-solid fa-eye"></i></a>
                     {{-- modifica --}}
-                    <button onclick="submitForm()" onsubmit="return confirm('Sei sicuro di voler modificare {{$tecnology->name}}?')" type="submit" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></button>
+                    <button onclick="submitForm()" onsubmit="return confirm('Sei sicuro di voler modificare {{$tecnology->name}}?')" type="submit" class="btn btn-warning">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
                     {{-- elimina --}}
                     <form
                        class="d-inline-block"
