@@ -3,6 +3,14 @@
 @section('content')
     <div class="container">
         <h1>qui abbiamo i tipi di lavori</h1>
+        {{-- add type --}}
+        <form action="{{ route('admin.types.store')}}" method="POST" class="input-group mb-3">
+            @csrf
+            <input type="text"
+            placeholder="Aggiungi Tecnologia" class="form-control" name="name" id="name">
+            <button class="btn btn-outline-secondary" type="submit" id="button-addon1">Button</button>
+        </form>
+        {{-- /add type --}}
         <table class="table">
             <thead>
               <tr>

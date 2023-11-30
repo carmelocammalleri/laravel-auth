@@ -37,7 +37,11 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_data= $request->all();
+        $new_type= new Type;
+        $new_type->fill($form_data);
+        $new_type->save();
+        return redirect()->route('admin.types.index');
     }
 
     /**
