@@ -68,7 +68,8 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));
+        $title='Modifica i singoli elementi';
+        return view('admin.projects.edit', compact('project', 'title'));
     }
 
     /**
