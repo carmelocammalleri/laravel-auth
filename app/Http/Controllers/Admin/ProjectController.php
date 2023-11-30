@@ -28,7 +28,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.projects.create');
+        $title = 'Inserimento nuovo progetto';
+        return view('admin.projects.create', compact('title'));
     }
 
     /**

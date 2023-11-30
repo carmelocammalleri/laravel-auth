@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h1>Crea il tuo progetto</h1>
+    <h1>{{$title}}</h1>
     <form action="{{route('admin.projects.store')}}" method="POST">
         @csrf
 
@@ -28,7 +28,7 @@
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Descrizione</label>
-            <input type="text" class="form-control" id="description" name="description">
+            <textarea type="text" class="form-control" id="description" name="description"></textarea>
         </div>
 
         <button type="submit" class="btn btn-secondary ">Invia</button>
