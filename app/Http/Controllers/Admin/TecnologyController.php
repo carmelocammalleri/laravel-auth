@@ -79,6 +79,9 @@ class TecnologyController extends Controller
         // $form_data = $request->all();
         // $tecnology->update($form_data);
         // return redirect()->route('admin.tecnology.index', $tecnology);
+        $form_data= $request->all();
+        $tecnology->update($form_data);
+        return redirect()->route('admin.tecnologies.index');
     }
 
     /**

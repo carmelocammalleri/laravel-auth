@@ -26,10 +26,23 @@
                 @foreach ($tecnologies as $tecnology)
                 <tr>
                   <th scope="row">{{$tecnology->id}}</th>
-                  <td>{{$tecnology->name}}</td>
+                   <td>
+                      <form
+                        action="{{ route('admin.tecnologies.update', $tecnology) }}"
+                        method="POST"
+                        class="d-inline-block"
+                        onsubmit="return confirm('Sei sicuro di voler modificare {{$tecnology->name}}?')"
+                        id="form-edit">
+                        <input type="text" value="{{$tecnology->name}}" name="name" id="name" class="no-border">
+                        @csrf
+                        @method('PUT')
+                      </form>
+                  </td>
                   <td>
                     <a class="btn btn-success" href="{{ route('admin.tecnologies.show', $tecnology->id)}}"><i class="fa-solid fa-eye"></i></a>
-                    <a class="btn btn-warning" href="{{route('admin.tecnologies.store')}}"><i class="fa-regular fa-pen-to-square"></i></a>
+                    {{-- modifica --}}
+                    <button onclick="submitForm()" onsubmit="return confirm('Sei sicuro di voler modificare {{$tecnology->name}}?')" type="submit" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></button>
+                    {{-- elimina --}}
                     <form
                        class="d-inline-block"
                        action="{{ route("admin.tecnologies.destroy", $tecnology->id) }}"
@@ -46,4 +59,10 @@
             </tbody>
           </table>
     </div>
+    <script>
+        function submitForm(){
+          const form = document.getElementById('form-edit');
+          form.submit();
+      }
+  </script>
 @endsection

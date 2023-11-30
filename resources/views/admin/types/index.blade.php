@@ -7,7 +7,7 @@
         <form action="{{ route('admin.types.store')}}" method="POST" class="input-group mb-3">
             @csrf
             <input type="text"
-            placeholder="Aggiungi Tecnologia" class="form-control" name="name" id="name">
+            placeholder="Aggiungi Tipo" class="form-control" name="name" id="name">
             <button class="btn btn-outline-secondary" type="submit" id="button-addon1">Button</button>
         </form>
         {{-- /add type --}}
@@ -23,24 +23,54 @@
             <tbody>
                 @foreach ($types as $type)
                 <tr>
-                  <th scope="row">{{$type->id}}</th>
-                  <td>{{$type->name}}</td>
-                  <td>
-                    <a class="btn btn-success" href="{{ route('admin.types.show', $type->id)}}"><i class="fa-solid fa-eye"></i></a>
+                    <th scope="row">{{$type->id}}</th>
+
+                    <td>
+                      <form
+                        action="{{route('admin.types.update', $type)}}"
+                        method="POST" id="form-edit">
+                        @csrf
+                        @method('PUT')
+
+                        <input for="name" type="text" value="{{$type->name}}">
+                    </form>
                   </td>
+
                   <td>
-                    <form action="{{ route('admin.types.destroy', $type->id)}}"
+                    {{-- mostra --}}
+                    <a class="btn btn-success" href="{{ route('admin.types.show', $type->id)}}"><i class="fa-solid fa-eye"></i></a>
+                    {{-- modifica --}}
+                    <button
+                      class="btn btn-warning"
+                      type="submit"
+                      onclick="submitForm()">
+                        <i class="fa-regular fa-pen-to-square"></i>
+                    </button>
+                    {{-- elimina --}}
+                    <form
+                        class="d-inline-block"
+                        action="{{ route('admin.types.destroy', $type->id)}}"
                         method="POST"
                         onsubmit="return confirm ('Sei sicuro di voler eliminare questo elemento?')">
                         @csrf
                         @method("DELETE")
+
                         <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
                     </form>
-
                   </td>
+
+
+
                 </tr>
                 @endforeach
             </tbody>
           </table>
     </div>
+
+    <script>
+          function submitForm(){
+            const form = document.getElementById('form-edit');
+            form.submit();
+        }
+    </script>
 @endsection
