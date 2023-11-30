@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Project;
 use Illuminate\Pagination\Paginator;
+use App\Request\ProjectRequest;
 
 class ProjectController extends Controller
 {
@@ -79,9 +80,14 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProjectRequest $request, Project $project)
     {
-        //
+        $form_data= $request->all();
+        if($form_data['title']!= $project->title){
+            $form_data['slug'] = $project->slug;
+        }else{
+            $form_data['slug'] = Project::generateSlug($form_data['name']);
+        }
     }
 
     /**
