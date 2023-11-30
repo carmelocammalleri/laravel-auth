@@ -90,7 +90,7 @@ class ProjectController extends Controller
         }
 
         $project->update($form_data);
-        return redirect()->route('admin.projects.show',$project->name);
+        return redirect()->route('admin.projects.show', $project);
     }
 
     /**
