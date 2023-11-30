@@ -37,7 +37,11 @@ class TecnologyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_data= $request->all();
+        $new_tecnology= new Tecnology;
+        $new_tecnology->fill($form_data);
+        $new_tecnology->save();
+        return redirect()->route('admin.tecnologies.index');
     }
 
     /**
@@ -70,9 +74,11 @@ class TecnologyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Tecnology $tecnology)
     {
-        //
+        // $form_data = $request->all();
+        // $tecnology->update($form_data);
+        // return redirect()->route('admin.tecnology.index', $tecnology);
     }
 
     /**
