@@ -19,8 +19,8 @@
             <input type="url" class="form-control" id="web_site" name="web_site">
         </div>
         <div class="mb-3">
-            <label for="technology" class="form-label">Tecnologia</label>
-            <input type="text" class="form-control" id="technology" name="technology">
+            <label for="tecnology" class="form-label">Tecnologia</label>
+            <input type="text" class="form-control" id="tecnology" name="tecnology">
         </div>
         <div class="mb-3">
             <label for="type" class="form-label">Tipo</label>
