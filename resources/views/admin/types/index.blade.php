@@ -28,7 +28,7 @@
                     <td>
                       <form
                         action="{{route('admin.types.update', $type)}}"
-                        method="POST" id="form-edit">
+                        method="POST" id="form-edit-{{$type->id}}">
                         @csrf
                         @method('PUT')
 
@@ -43,7 +43,7 @@
                     <button
                       class="btn btn-warning"
                       type="submit"
-                      onclick="submitForm()">
+                      onclick="submitForm({{$type->id}})">
                         <i class="fa-regular fa-pen-to-square"></i>
                     </button>
                     {{-- elimina --}}
@@ -68,8 +68,8 @@
     </div>
 
     <script>
-          function submitForm(){
-            const form = document.getElementById('form-edit');
+          function submitForm(id){
+            const form = document.getElementById('form-edit-'+id);
             form.submit();
         }
     </script>

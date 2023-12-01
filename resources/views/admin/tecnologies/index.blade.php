@@ -32,7 +32,7 @@
                         method="POST"
                         class="d-inline-block"
                         onsubmit="return confirm('Sei sicuro di voler modificare {{$tecnology->name}}?')"
-                        id="form-edit">
+                        id="form-edit-{{$type->id}}">
                         <input type="text" value="{{$tecnology->name}}" name="name" id="name" class="no-border">
                         @csrf
                         @method('PUT')
@@ -41,7 +41,7 @@
                   <td>
                     <a class="btn btn-success" href="{{ route('admin.tecnologies.show', $tecnology->id)}}"><i class="fa-solid fa-eye"></i></a>
                     {{-- modifica --}}
-                    <button onclick="submitForm()" onsubmit="return confirm('Sei sicuro di voler modificare {{$tecnology->name}}?')" type="submit" class="btn btn-warning">
+                    <button onclick="submitForm({{$type->id}})" onsubmit="return confirm('Sei sicuro di voler modificare {{$tecnology->name}}?')" type="submit" class="btn btn-warning">
                         <i class="fa-solid fa-pen-to-square"></i>
                     </button>
                     {{-- elimina --}}
@@ -62,8 +62,8 @@
           </table>
     </div>
     <script>
-        function submitForm(){
-          const form = document.getElementById('form-edit');
+        function submitForm(id){
+          const form = document.getElementById('form-edit-'+id);
           form.submit();
       }
   </script>
